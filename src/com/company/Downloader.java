@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 public class Downloader extends Thread{
 
     private final static String REGULAR_FOR_MUSIC_DOWNLOAD = "\\/track\\/dl(.+).mp3";
-    private final static String REGULAR_FOR_PICTURE_DOWNLOAD = "https:\\/\\/40s.musify.club\\/img\\/(.+).jpg";
+    private final static String REGULAR_FOR_PICTURE_DOWNLOAD = "https:\\/\\/(.+).jpg";
     private final static String REGULAR_FOR_MUSIC_NAME = "\\/track\\/dl\\/(.+)\\/";
-    private final static String REGULAR_FOR_PICTURE_NAME = "https:\\/\\/40s.musify.club\\/img\\/69\\/7425378\\/";
+    //private final static String REGULAR_FOR_PICTURE_NAME = "https:\\/\\/40s.musify.club\\/img\\/69\\/7425378\\/";
     private final static String PATH = "music\\";
     private final static String PROTOCOL = "https://musify.club";
 
@@ -87,7 +87,8 @@ public class Downloader extends Thread{
         in.close();
 
         byte[] response = out.toByteArray();
-        FileOutputStream fos = new FileOutputStream(fullPath + matcher.group().replaceAll(REGULAR_FOR_PICTURE_NAME, ""));
+        FileOutputStream fos = new FileOutputStream(fullPath + "cover.jpg");
+        //FileOutputStream fos = new FileOutputStream(fullPath + matcher.group().replaceAll(REGULAR_FOR_PICTURE_NAME, ""));
 
         fos.write(response);
         fos.close();
