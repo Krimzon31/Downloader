@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String line;
 
-        System.out.println("Вводите ссылки для скачивания музыки по очереди. Для окончания процедуры введите \"End\"");
+        System.out.println("Вводите ссылки для скачивания музыки и картинки по очереди. Для окончания процедуры введите \"End\"");
 
         try {
             while (true) {
