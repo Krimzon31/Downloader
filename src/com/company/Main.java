@@ -1,5 +1,7 @@
 package com.company;
 
+import javazoom.jl.player.Player;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,7 +19,8 @@ public class Main {
                 if(line.equals("End")){
                     break;
                 }
-                new Downloader(line).start();
+                new MusicDownloader(line).start();
+                new PictureDownloader(line).start();
             }
         }catch (IOException ex){
             System.out.println(ex.getMessage());
